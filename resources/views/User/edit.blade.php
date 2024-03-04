@@ -5,18 +5,15 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Edit</h5>
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="/editfoto/{{ $foto->id }}" method="post">
                     @csrf
-                    @method('PUT')
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Judul Foto</label>
-                        <input type="text" name="judul" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label class="form-label">Judul Foto</label>
+                        <input type="text" name="judul_baru" class="form-control" value="{{ $foto->judul }}">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Deskripsi</label>
-                        <textarea type="text" name="deskripsi" class="form-control" id="exampleInputPassword1"></textarea>
-                        <input type="hidden" name="tanggal" class="form-control" id="exampleInputPassword1" value="">
-                        <input type="hidden" name="user" class="form-control" id="exampleInputPassword1" value="">
+                        <label class="form-label">Deskripsi</label>
+                        <textarea type="text" name="deskripsi_baru" class="form-control">{{ $foto->deskripsi}}</textarea>
                     </div>
                     <input type="submit" name="" value="Update" class="btn btn-primary"></input>
                 </form>

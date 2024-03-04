@@ -86,5 +86,9 @@ class Viewcontroller extends Controller
     {
         return view('User.editprofile');
     }
+    public function formedit(Request $request, $id){
+        $foto = Post::findorfail($id);
+        return view('User.edit', compact('foto'));
+    }
     
 }

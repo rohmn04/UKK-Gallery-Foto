@@ -54,4 +54,7 @@ Route::middleware('login')->group(function(){
 		Route::post('/addkomentar',[Usercontroller::class,'komen']);
 		Route::post('/likefoto',[Usercontroller::class,'like']);
 		Route::get('/cari',[Usercontroller::class,'search']);
+		Route::get('/hapusfoto/{id}',[Usercontroller::class,'deletfoto']);
+		Route::get('/ubahfoto/{id}',[Viewcontroller::class,'formedit']);
+		Route::post('/editfoto/{id}',[Usercontroller::class,'updatefoto']);
 });

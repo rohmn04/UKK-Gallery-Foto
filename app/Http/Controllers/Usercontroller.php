@@ -45,7 +45,7 @@ class Usercontroller extends Controller
         'alamat'         => 'required',
         'tgl_lahir'      => 'required',
         'email'          => 'required|min:15|unique:users',
-        'password'          => 'required|min:6'
+        'password'       => 'required|min:6'
         ]);
 
 		//Proses Simpan
@@ -211,8 +211,22 @@ class Usercontroller extends Controller
         }  
     }
 
-    public function carikategori(Request $request){
 
+
+    public function updatefoto(Request $request, $id){
+        $foto = Post::findorfail($id);
+        $data_foto = [
+            'judul'         => $request->judul_baru,
+            'deskripsi'     => $request->deskripsi_baru,
+        ];
+        $foto->update($data_foto);
+        return redirect('/masuk')->with('success', 'Judul dan deskripsi berhasil di ubah');
+    }
+
+    public function deletfoto($id){
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('/masuk')->with('success', 'Foto berhasil di hapus');
     }
 
 

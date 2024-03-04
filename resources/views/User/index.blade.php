@@ -27,14 +27,38 @@
                                     <form action="/likefoto" method="post">
                                     @csrf
                                         <input type="hidden" name="id_foto" value="{{ $post->id }}">
-                                        <button class="iicon" type="submit">
-                                            <i class="bi bi-heart"></i>
-                                        </button>
-                                        <ul class="dropdown-menu text-small">
-                                        <li><a class="dropdown-item" href="foto.php"><i class="bi bi-download"></i> Download</a></li>
-                                        <li><a class="dropdown-item" href="foto.php"><i class="bi bi-plus"></i> Tambahkan Ke Album</a></li>
-                                        <li><a class="dropdown-item" href="profile.php"><i class="bi bi-trash"></i> Hapus</a></li>
-                                    </ul>
+                                        <!-- option dan like button -->
+                                        <div class="d-flex justify-content-between">
+                                        <!-- option edit hapus -->
+                                    <div>
+                                                
+                                            <div class="dropdown">
+                                            <a  class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-list"></i>
+                                            </a>
+                                        <ul class="dropdown-menu hapus text-small">
+                                            <li><a class="dropdown-item" href="/ubahfoto/{{$post->id}}"><i class="bi bi-pencil-square"></i> Edit</a></li>
+                                            <li><a class="dropdown-item" href="/hapusfoto/{{$post->id}}"><i class="bi bi-trash"></i> Hapus</a></li>
+                                        </ul>
+                                        </div>
+                                        
+                                    </div>
+                                    <!-- End option edit hapus -->
+
+                                        <!-- Button like -->
+                                        <div>
+                                            <button class="icon" type="submit">
+                                             <i class="bi bi-heart"></i>
+                                            </button>
+                                        </div>
+                                        <!-- End Button like -->
+
+                                        </div>
+                                        <!-- End option dan like button -->
+
+                                        
+                                        
+                            
                                     </form>
                                 </div>
                             </div>

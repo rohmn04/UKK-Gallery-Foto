@@ -30,8 +30,7 @@
                                         <!-- option dan like button -->
                                         <div class="d-flex justify-content-between">
                                         <!-- option edit hapus -->
-                                    <div>
-                                                
+                                    <div>     
                                             <div class="dropdown">
                                             <a  class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <i class="bi bi-list"></i>
@@ -41,10 +40,9 @@
                                             <li><a class="dropdown-item" href="/hapusfoto/{{$post->id}}"><i class="bi bi-trash"></i> Hapus</a></li>
                                         </ul>
                                         </div>
-                                        
                                     </div>
                                     <!-- End option edit hapus -->
-
+                                    
                                         <!-- Button like -->
                                         <div>
                                             <button class="icon" type="submit">
@@ -52,13 +50,8 @@
                                             </button>
                                         </div>
                                         <!-- End Button like -->
-
                                         </div>
                                         <!-- End option dan like button -->
-
-                                        
-                                        
-                            
                                     </form>
                                 </div>
                             </div>

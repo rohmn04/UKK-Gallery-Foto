@@ -33,10 +33,15 @@
                                                     <img src="../assets/img/album.jpg" class="img-fluid w-100 rounded" alt="Image">
                                                     <div class="national-content">
                                                         <div class="national-info">
+                                                            <div>
                                                             <h5 class="text-white text-uppercase mb-2">{{ $album_foto->judul_album }}</h5>
                                                             <a href="/viewAlbum/{{ $album_foto->id }}" class="btn-hover text-white">Lihat<i class="fa fa-arrow-right ms-2"></i></a>
                                                         </div>
+                                                        <div class="dropdown">
+                                                            <a  class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></a><ul class="dropdown-menu hapus text-small"><li><a class="dropdown-item" href="/editalbum/{{$album_foto->id}}"><i class="bi bi-pencil-square"></i> Edit</a></li><li><a class="dropdown-item" href="/hapusalbum/{{$album_foto->id}}"><i class="bi bi-trash"></i> Hapus</a></li></ul>
+                                                        </div>
                                                     </div>
+                                                </div>
                                                     <div class="national-plus-icon">
                                                         <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
                                                     </div>

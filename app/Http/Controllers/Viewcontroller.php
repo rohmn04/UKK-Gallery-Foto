@@ -90,5 +90,9 @@ class Viewcontroller extends Controller
         $foto = Post::findorfail($id);
         return view('User.edit', compact('foto'));
     }
+     public function formeditalbum(Request $request, $id){
+        $album = Album::findorfail($id);
+        return view('User.edit_album', compact('album'));
+    }
     
 }

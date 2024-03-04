@@ -211,8 +211,6 @@ class Usercontroller extends Controller
         }  
     }
 
-
-
     public function updatefoto(Request $request, $id){
         $foto = Post::findorfail($id);
         $data_foto = [
@@ -227,6 +225,22 @@ class Usercontroller extends Controller
         $post = Post::find($id);
         $post->delete();
         return redirect('/masuk')->with('success', 'Foto berhasil di hapus');
+    }
+
+    public function updatealbum(Request $request, $id){
+        $album = Album::findorfail($id);
+        $data_album = [
+            'judul_album'         => $request->judul_baru,
+            'deskripsi_album'     => $request->deskripsi_baru,
+        ];
+        $album->update($data_album);
+        return redirect('/create')->with('success', 'Judul dan deskripsi berhasil di ubah');
+    }
+
+    public function deletalbum($id){
+        $post = Album::find($id);
+        $post->delete();
+        return redirect('/create')->with('success', 'Album berhasil di hapus');
     }
 
 

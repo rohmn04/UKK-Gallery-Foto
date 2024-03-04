@@ -43,6 +43,8 @@ Route::middleware('login')->group(function(){
 		Route::get('/explore',[Viewcontroller::class,'explore']);
 		Route::get('/edit',[Viewcontroller::class,'edit']);
 		Route::get('/editprofile',[Viewcontroller::class,'editprofile']);
+		Route::get('/editalbum/{id}',[Viewcontroller::class,'formeditalbum']);
+		Route::get('/ubahfoto/{id}',[Viewcontroller::class,'formedit']);
 
 
 						//Proses setelah Login//
@@ -55,6 +57,6 @@ Route::middleware('login')->group(function(){
 		Route::post('/likefoto',[Usercontroller::class,'like']);
 		Route::get('/cari',[Usercontroller::class,'search']);
 		Route::get('/hapusfoto/{id}',[Usercontroller::class,'deletfoto']);
-		Route::get('/ubahfoto/{id}',[Viewcontroller::class,'formedit']);
-		Route::post('/editfoto/{id}',[Usercontroller::class,'updatefoto']);
+		Route::post('/editalbum/{id}',[Usercontroller::class,'updatealbum']);
+		Route::get('/hapusalbum/{id}',[Usercontroller::class,'deletalbum']);
 });
